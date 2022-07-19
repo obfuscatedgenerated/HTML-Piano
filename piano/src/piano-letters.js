@@ -2,7 +2,7 @@ const pianoClassNames = require('./piano-class-names');
 
 function keyArray(piano) {
   const whiteLetters = ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/'];
-  const blackLetters = ['s', 'd', 'g', 'h', 'j', 'l', ';'];
+  const blackLetters = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\''];
   let combinedArray = [];
 
   for (let index = 0; index < piano.whiteKeysAmount; index++) {

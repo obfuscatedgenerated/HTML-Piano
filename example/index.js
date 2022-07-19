@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {visible: false, amount: 1},
     ];
     const piano = newPiano(whiteKeys, blackKeys);
-    piano.enableMusicalTyping(13);
+    piano.enableMusicalTyping(1);
     // piano.disableMusicalTyping();
     piano.keyDown = (keyNumber) => {
       console.log("key down", keyNumber);
@@ -49,16 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Using notes and octaves data
     const startNote = {
       note: "c",
-      octave: 3
+      octave: 2
     };
     const endNote = {
-      note: "b",
-      octave: 4
+      note: "f",
+      octave: 3
     };
 
     let piano;
     try {
       piano = newPiano(startNote, endNote);
+      piano.enableMusicalTyping(1);
     } catch (e) {
       if (e instanceof PianoBuildError) {
         console.log("Error building piano", e);
