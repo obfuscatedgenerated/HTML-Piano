@@ -29,11 +29,6 @@ function addMouseEventListenersToKeys(piano, keys) {
       piano._keyUp(this);
       // return false;
     });
-    key.addEventListener('mouseover', function(event) {
-      if (!mouseDown) {return false;}
-      piano._keyDown(this);
-      // return false;
-    });
   }
 }
 
