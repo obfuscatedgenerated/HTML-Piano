@@ -22,6 +22,11 @@ function addMouseEventListenersToKeys(piano, keys) {
       piano._keyUp(this);
       // return false;
     });
+    key.addEventListener('touchcancel', function(event) {
+      if (!mouseDown) {return false;}
+      piano._keyUp(this);
+      // return false;
+    });
     key.addEventListener('mouseover', function(event) {
       if (!mouseDown) {return false;}
       piano._keyDown(this);
