@@ -17,12 +17,12 @@ function addMouseEventListenersToKeys(piano, keys) {
       piano._keyUp(this);
       // return false;
     });
-    key.addEventListener('pointerout', function(event) {
+    key.addEventListener('mouseout', function(event) {
       if (!mouseDown) {return false;}
       piano._keyUp(this);
       // return false;
     });
-    key.addEventListener('pointerover', function(event) {
+    key.addEventListener('mouseover', function(event) {
       if (!mouseDown) {return false;}
       piano._keyDown(this);
       // return false;
