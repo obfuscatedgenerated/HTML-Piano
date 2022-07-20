@@ -5,24 +5,24 @@ let mouseDown = false;
 
 function addMouseEventListenersToKeys(piano, keys) {
   for (key of keys) {
-    key.addEventListener('mousedown', function(event) {
+    key.addEventListener('pointerdown', function(event) {
       if (mouseDown) {return false;}
       mouseDown = true;
       piano._keyDown(this);
       // return false;
     });
-    key.addEventListener('mouseup', function(event) {
+    key.addEventListener('pointerup', function(event) {
       if (!mouseDown) {return false;}
       mouseDown = false;
       piano._keyUp(this);
       // return false;
     });
-    key.addEventListener('mouseout', function(event) {
+    key.addEventListener('pointerout', function(event) {
       if (!mouseDown) {return false;}
       piano._keyUp(this);
       // return false;
     });
-    key.addEventListener('mouseover', function(event) {
+    key.addEventListener('pointerover', function(event) {
       if (!mouseDown) {return false;}
       piano._keyDown(this);
       // return false;
