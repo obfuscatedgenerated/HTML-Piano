@@ -3,6 +3,7 @@ const pianoClassNames = require('./piano-class-names');
 // True if the mouse is currently down
 let mouseDown = false;
 
+
 function addMouseEventListenersToKeys(piano, keys) {
   for (key of keys) {
     key.addEventListener('pointerdown', function(event) {
@@ -17,12 +18,13 @@ function addMouseEventListenersToKeys(piano, keys) {
       piano._keyUp(this);
       // return false;
     });
-    key.addEventListener('mouseout', function(event) {
+    key.addEventListener('touchend', function(event) {
       if (!mouseDown) {return false;}
+      mouseDown = false;
       piano._keyUp(this);
       // return false;
     });
-    key.addEventListener('touchcancel', function(event) {
+    key.addEventListener('mouseout', function(event) {
       if (!mouseDown) {return false;}
       piano._keyUp(this);
       // return false;
